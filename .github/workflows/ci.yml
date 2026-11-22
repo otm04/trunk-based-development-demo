@@ -1,0 +1,19 @@
+name: CI
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - name: Test integrated application
+        run: node --test shipping.test.js checkout.test.js
+      - name: Demonstrate separate passes, integration failure, and fix
+        run: node run-demo.mjs "${{ runner.temp }}/trunk-demo"
