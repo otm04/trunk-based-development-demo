@@ -1,6 +1,6 @@
 # Trunk-based development: delivery and checkout
 
-A five-minute teaching demo for Otmane Aberchane: why short-lived branches help continuous integration.
+why short-lived branches help continuous integration.
 
 ## The idea
 
